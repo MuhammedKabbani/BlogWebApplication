@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
 using DataAccessLayer.Repositories;
 using EntityLayer.Concrate;
 using System;
@@ -11,10 +12,10 @@ namespace BusinessLayer.Concrate
 {
     public class CategoryService : ICategoryService
     {
-        CategoryRepository _repo;
-        public CategoryService()
+        ICategoryRepository _repo;
+        public CategoryService(ICategoryRepository repo)
         {
-            _repo = new CategoryRepository();
+            _repo = repo;
 
         }
         public void AddCategory(Category c)
