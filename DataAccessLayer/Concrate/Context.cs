@@ -12,7 +12,7 @@ namespace DataAccessLayer.Concrate
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server = MUHAMMEDKB\\SQLEXPRESS;database = CoreBlogApplication;  integrated security = true");
+            optionsBuilder.UseSqlServer("server = MUHAMMEDKB\\SQLEXPRESS;database = CoreBlogApplication;  integrated security = true;TrustServerCertificate=True");
 
         }
 
