@@ -1,12 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
-using DataAccessLayer.Repositories;
 using EntityLayer.Concrate;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrate
 {
@@ -36,6 +30,11 @@ namespace BusinessLayer.Concrate
 		public List<Blog> GetAllBlogs()
 		{
 			return _repo.GetAll();
+		}
+
+		public List<Blog> GetAllBlogsWithCategories()
+		{
+			return _repo.GetBlogsWithCategories();
 		}
 
 		public Blog GetBlogById(int id)

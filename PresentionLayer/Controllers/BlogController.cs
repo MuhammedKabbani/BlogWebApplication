@@ -11,7 +11,7 @@ namespace PresentionLayer.Controllers
 		BlogService bs = new BlogService(new BlogRepository());
 		public IActionResult Index()
 		{
-			var values = bs.GetAllBlogs();
+			var values = bs.GetAllBlogsWithCategories();
 			return View(values);
 		}
 	}
