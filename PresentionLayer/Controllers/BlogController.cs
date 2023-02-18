@@ -14,5 +14,9 @@ namespace PresentionLayer.Controllers
 			var values = bs.GetAllBlogsWithCategories();
 			return View(values);
 		}
+		public IActionResult Details(int id)
+		{ 
+			return View(bs.GetBlogById(id));
+		}
 	}
 }

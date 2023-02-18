@@ -9,7 +9,6 @@
 	<div class="container">
 		<h3 class="tittle">Blog Posts</h3>
 		<div class="inner-sec">
-			<!--left-->
 			<div class="left-blog-info-w3layouts-agileits text-left">
 				<div class="row">
 					@foreach (var item in Model)
@@ -35,18 +34,16 @@
 											<i class="fas fa-tag"></i> @item.Category.CategoryName
 										</a>
 									</li>
-
 								</ul>
 								<h5 class="card-title">
 									<a href="single.html">@item.BlogTitle</a>
 								</h5>
-								<p class="card-text mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod tempor incididunt.. </p>
-								<a href="single.html" class="btn btn-primary read-m">Read More</a>
+								<p class="card-text mb-3">@item.BlogContent.Substring(0,item.BlogContent.Substring								(0,115).LastIndexOf(" "))... </p>
+								<a href="/Blog/Details/@item.BlogId" class="btn btn-primary read-m">Read More</a>
 							</div>
 						</div>
 					}
 				</div>
-				<!--//left-->
 			</div>
 		</div>
 	</div>

@@ -1,4 +1,5 @@
 ﻿using EntityLayer.Concrate;
+using System.Linq.Expressions;
 
 namespace BusinessLayer.Abstract
 {
@@ -9,6 +10,7 @@ namespace BusinessLayer.Abstract
 		public void BlogUpdate(Blog b);
 		public Blog GetBlogById(int id);
 		public List<Blog> GetAllBlogs();
+		public List<Blog> GetAllBlogs(Expression<Func<Blog,bool>> expression);
 		public List<Blog> GetAllBlogsWithCategories();
 	}
 }

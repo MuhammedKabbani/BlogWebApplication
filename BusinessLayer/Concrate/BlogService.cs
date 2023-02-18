@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
 using EntityLayer.Concrate;
+using System.Linq.Expressions;
 
 namespace BusinessLayer.Concrate
 {
@@ -30,6 +31,10 @@ namespace BusinessLayer.Concrate
 		public List<Blog> GetAllBlogs()
 		{
 			return _repo.GetAll();
+		}
+		public List<Blog> GetAllBlogs(Expression<Func<Blog,bool>> expression)
+		{
+			return _repo.GetAll(expression);
 		}
 
 		public List<Blog> GetAllBlogsWithCategories()
