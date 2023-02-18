@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BusinessLayer.Concrate;
+using DataAccessLayer.Repositories;
+using Microsoft.AspNetCore.Mvc;
 
 namespace PresentionLayer.Controllers
 {
 	public class CommentController : Controller
 	{
+		CommentService cm = new CommentService(new CommentRepository());
 		public IActionResult Index()
 		{
 			return View();
