@@ -15,9 +15,6 @@ namespace PresentionLayer.Controllers
 		{
 			return PartialView();
 		}
-		public PartialViewResult PartialBlogComments()
-		{
-			return PartialView();
-		}
+
 	}
 }

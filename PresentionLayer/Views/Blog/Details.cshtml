@@ -49,7 +49,8 @@
 					<a href="/Blog/Index" class = "btn btn-primary read-m">Back To Blogs</a>
 				</div>
 
-				@await Html.PartialAsync("~/Views/Comment/PartialBlogComments.cshtml");
+				@*@await Html.PartialAsync("~/Views/Comment/PartialBlogComments.cshtml");*@
+				@await Component.InvokeAsync("CommentsByBlog",Model.BlogId)
 				@await Html.PartialAsync("~/Views/Comment/PartialAddComment.cshtml")
 				
 			</div>
@@ -71,21 +72,7 @@
 
 					</div>
 					<div class="tech-btm">
-						<h4>Categories</h4>
-						<ul class="list-group single">
-							<li class="list-group-item d-flex justify-content-between align-items-center">
-								Cras justo odio
-								<span class="badge badge-primary badge-pill">14</span>
-							</li>
-							<li class="list-group-item d-flex justify-content-between align-items-center">
-								Dapibus ac facilisis in
-								<span class="badge badge-primary badge-pill">2</span>
-							</li>
-							<li class="list-group-item d-flex justify-content-between align-items-center">
-								Morbi leo risus
-								<span class="badge badge-primary badge-pill">1</span>
-							</li>
-						</ul>
+						@await Component.InvokeAsync("CategoryList")
 					</div>
 					<div class="tech-btm">
 						<h4>Top stories of the week</h4>
